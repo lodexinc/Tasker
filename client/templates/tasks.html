@@ -1,0 +1,62 @@
+<div class="row text-center">
+
+	<div class="col-md-6 col-md-offset-3" ng-show="user">
+		<h3>Tasks</h3>
+		<!-- Create a new task -->
+		<form>
+		  <div class="form-group">
+		  	<div class="input-group">
+			    <input type="text" class="form-control" id="newTaskInput" name='newTaskInput' placeholder="New task..." ng-model='newTaskName' >
+			    <div class="input-group-btn">
+		        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+		        <ul class="dropdown-menu dropdown-menu-right">
+		          <li><a href="#">Action</a></li>
+		          <li><a href="#">Another action</a></li>
+		          <li><a href="#">Something else here</a></li>
+		          <li role="separator" class="divider"></li>
+		          <li><a href="#">Separated link</a></li>
+		        </ul>
+		        <button class="btn btn-primary" type="button" ng-click="postNewTask()">Go!</button>
+			    </div>
+		    </div>
+		  </div>
+		</form>
+
+		<!-- List all the Pending tasks -->
+		<ul class="list-group text-left" ng-model="newTaskName" ng-show="user">
+			<li class="list-group-item">
+				<h4>Pending Tasks</h4>
+			</li>
+			<li class="list-group-item" ng-repeat="task in user.data.tasks" ng-if="task.completed == false">
+				<div class="row">
+					<div class="col-md-8">
+						{{task.name}}
+					</div>
+					<div class="col-md-4 text-right">
+						<button type="button" class="btn btn-success btn-xs" ng-click="completeTask(task)">Done</button>
+						<button type="button" class="btn btn-danger btn-xs">Remove</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<!-- List all the Completed tasks -->
+		<ul class="list-group text-left" ng-model="newTaskName" ng-show="user">
+			<li class="list-group-item">
+				<h4>Completed Tasks</h4>
+			</li>
+			<li class="list-group-item disabled" ng-repeat="task in user.data.tasks" ng-if="task.completed == true">
+				<div class="row">
+					<div class="col-md-8">
+						{{task.name}}
+					</div>
+					<div class="col-md-4 text-right">
+						<button type="button" class="btn btn-warning btn-xs" ng-click="completeTask(task)">Undone</button>
+						<button type="button" class="btn btn-danger btn-xs">Remove</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</div>

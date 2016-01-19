@@ -1,0 +1,16 @@
+<div class="row text-center">
+
+	<div class="col-md-12" ng-show="loginUrl">
+		<h3>Log in for start using Tasker</h3>
+		<a href={{loginUrl}}><button type="button" class="btn btn-primary btn-md">Login with Facebook</button></a>
+	</div>
+
+	<div class="col-md-6 col-md-offset-3" ng-show="user">
+		<h1>Welcome {{user.name}}</h1>
+		<ul class="list-group">
+			<li class="list-group-item"><a href='#/tasks'>Tasks</a></li>
+			<li class="list-group-item"><a href='#/categories'>Categories</a></li>
+		</ul>
+	</div>
+
+</div>

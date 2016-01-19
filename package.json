@@ -1,0 +1,31 @@
+{
+  "name": "Tasker",
+  "version": "0.0.1",
+  "description": "A basic task manager",
+  "author": "Jesé Rodríguez <jese200@gmail.com>",
+  "scripts": {
+    "start-server": "node ./server/index.js",
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-route": "^1.4.8",
+    "body-parser": "^1.14.2",
+    "browserify": "^12.0.1",
+    "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "gulp": "^3.9.0",
+    "http-status": "^0.2.0",
+    "jquery": "^2.1.4",
+    "mongoose": "^4.3.6",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.0.0",
+    "wagner-core": "^0.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-express": "^0.3.5",
+    "gulp-rename": "^1.2.2"
+  }
+}
